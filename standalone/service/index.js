@@ -9,6 +9,7 @@ const fetch = require('node-fetch');
 const http = require('http');
 const https = require('https');
 const URL = require('url');
+const path = require('path');
 const injector = require('./injector.js');
 
 app.use((req, res, next) => {
@@ -24,6 +25,20 @@ app.use((req, res, next) => {
 app.get('/tizentube/getState', (req, res) => {
     injector.canConnectToDaemon().then(r => {
         res.json(r);
+    });
+});
+
+// Our small, independent patch (Play/Pause fallback + Instant Animations
+// toggle). Served locally, entirely from inside this packaged app -- copied in
+// at build time from patch.js by standalone/service/build-service.js, right
+// next to this bundled service file. The main TizenTube userScript itself
+// still comes from Reis's CDN below, so it keeps getting upstream updates.
+app.get('/tizentube/patch.js', (req, res) => {
+    res.setHeader('Content-Type', 'application/javascript');
+    res.sendFile(path.join(__dirname, 'patch.js'), (err) => {
+        if (err && !res.headersSent) {
+            res.status(500).send('// TizenTube: patch.js not found. Did you build standalone/service (npm run build)?');
+        }
     });
 });
 
@@ -138,8 +153,14 @@ app.all('*', (req, res) => {
 
                 return response.text().then((text) => {
                     if (req.url.indexOf('/tv') === 0 && req.url.indexOf('/tv_config') === -1) {
-                        // Insert the userscript for TizenTube
+                        // Main TizenTube userScript, straight from Reis's CDN like upstream
+                        // does -- keeps getting his ad-blocking/compatibility updates
+                        // automatically without needing to rebuild this app.
                         text += `<script src="https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js?ver=${Date.now()}"></script>`;
+                        // Our own small, independent patch (Play/Pause fallback + Instant
+                        // Animations toggle), served locally from inside this package. It
+                        // loads AFTER the line above so it can't get overwritten by it.
+                        text += `<script src="http://localhost:${PORT}/tizentube/patch.js?ver=${Date.now()}"></script>`;
                     }
 
                     const proxyPrefix = `http://localhost:${PORT}/cors-bypass/`;
