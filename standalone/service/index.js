@@ -9,6 +9,7 @@ const fetch = require('node-fetch');
 const http = require('http');
 const https = require('https');
 const URL = require('url');
+const path = require('path');
 const injector = require('./injector.js');
 
 app.use((req, res, next) => {
@@ -24,6 +25,20 @@ app.use((req, res, next) => {
 app.get('/tizentube/getState', (req, res) => {
     injector.canConnectToDaemon().then(r => {
         res.json(r);
+    });
+});
+
+// Our small, independent patch (Play/Pause fallback + Instant Animations
+// toggle). Served locally, entirely from inside this packaged app -- copied in
+// at build time from patch.js by standalone/service/build-service.js, right
+// next to this bundled service file. The main TizenTube userScript itself
+// still comes from Reis's CDN below, so it keeps getting upstream updates.
+app.get('/tizentube/patch.js', (req, res) => {
+    res.setHeader('Content-Type', 'application/javascript');
+    res.sendFile(path.join(__dirname, 'patch.js'), (err) => {
+        if (err && !res.headersSent) {
+            res.status(500).send('// TizenTube: patch.js not found. Did you build standalone/service (npm run build)?');
+        }
     });
 });
 
@@ -99,7 +114,7 @@ app.all('*', (req, res) => {
             for (const key in headerKeys) {
                 if (Object.prototype.hasOwnProperty.call(headerKeys, key)) {
                     const lowerKey = key.toLowerCase();
-                    const skipHeaders = ['content-encoding', 'content-length', 'transfer-encoding', 'content-security-policy', 'alt-svc'];
+                    const skipHeaders = ['content-encoding', 'content-length', 'transfer-encoding', 'content-security-policy', 'alt-svc', 'location'];
                     if (isCorsBypass) skipHeaders.push('access-control-allow-origin');
 
                     if (skipHeaders.indexOf(lowerKey) !== -1) continue;
@@ -127,6 +142,35 @@ app.all('*', (req, res) => {
                 }
             }
 
+            // fetchOptions above uses redirect: 'manual', so any 3xx response from
+            // YouTube (auth flows, canonical URL normalization, consent pages --
+            // all common) arrives here with its raw Location header still pointing
+            // at the REAL external host. Passing that straight through would send
+            // the browser to navigate directly to it, bypassing this proxy (and
+            // the old Tizen browser engine may not even be able to reach it, e.g.
+            // due to an outdated CA store -- a very plausible cause of "youtube.com
+            // can't be reached" happening only sometimes). Rewrite it to keep
+            // redirects routed back through us, the same way response bodies
+            // already get their embedded URLs rewritten.
+            if (response.status >= 300 && response.status < 400) {
+                const location = response.headers.get('location');
+                if (location) {
+                    try {
+                        const resolvedLocation = URL.resolve(targetUrl, location);
+                        const locUrl = URL.parse(resolvedLocation);
+                        if (locUrl.hostname === 'www.youtube.com' || locUrl.hostname === 'youtube.com') {
+                            res.setHeader('Location', `http://localhost:${PORT}${locUrl.path}`);
+                        } else {
+                            res.setHeader('Location', `http://localhost:${PORT}/cors-bypass/${resolvedLocation}`);
+                        }
+                    } catch (e) {
+                        // If anything about the URL is unparseable, fall back to
+                        // passing it through rather than breaking the response.
+                        res.setHeader('Location', location);
+                    }
+                }
+            }
+
             res.setHeader('Access-Control-Allow-Origin', '*');
 
             const contentType = response.headers.get('content-type') || '';
@@ -138,41 +182,85 @@ app.all('*', (req, res) => {
 
                 return response.text().then((text) => {
                     if (req.url.indexOf('/tv') === 0 && req.url.indexOf('/tv_config') === -1) {
-                        // Insert the userscript for TizenTube
+                        // Main TizenTube userScript, straight from Reis's CDN like upstream
+                        // does -- keeps getting his ad-blocking/compatibility updates
+                        // automatically without needing to rebuild this app.
                         text += `<script src="https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js?ver=${Date.now()}"></script>`;
+                        // Our own small, independent patch (Play/Pause fallback + Instant
+                        // Animations toggle), served locally from inside this package. It
+                        // loads AFTER the line above so it can't get overwritten by it.
+                        text += `<script src="http://localhost:${PORT}/tizentube/patch.js?ver=${Date.now()}"></script>`;
                     }
 
                     const proxyPrefix = `http://localhost:${PORT}/cors-bypass/`;
 
                     // Rewrite rules for replacing URLs so CORS and presumably YT is happy.
-                    text = text.replace(/https:\/\/([a-zA-Z0-9-.]+)\.googlevideo\.com/g, `${proxyPrefix}https://$1.googlevideo.com`);
-                    text = text.replace(/https:\\\/\\\/([a-zA-Z0-9-.]+)\.googlevideo\.com/g, `http:\\\/\\\/localhost:${PORT}\\\/cors-bypass\\\/https:\\\/\\\/$1.googlevideo.com`);
-                    text = text.replace(/"\/\/([a-zA-Z0-9-.]+)\.googlevideo\.com/g, `"${proxyPrefix}https://$1.googlevideo.com`);
+                    // Every one of these is guarded by a cheap substring check first: on a
+                    // resource-constrained Tizen 4.0 CPU, running 20+ regex passes over the
+                    // FULL body of every single text/json/js/css response (which includes
+                    // every "browse"/"next"/"like"/search API call the SPA makes while you
+                    // navigate, not just the main page) adds up fast and blocks Node's
+                    // single-threaded event loop, which can make responses arrive late
+                    // enough that the SPA's own retry/reload logic kicks in. Most individual
+                    // responses don't contain most of these patterns at all, so skipping the
+                    // regex entirely when the substring isn't present gives identical output
+                    // with far less wasted work.
+                    if (text.indexOf('googlevideo.com') !== -1) {
+                        text = text.replace(/https:\/\/([a-zA-Z0-9-.]+)\.googlevideo\.com/g, `${proxyPrefix}https://$1.googlevideo.com`);
+                        text = text.replace(/https:\\\/\\\/([a-zA-Z0-9-.]+)\.googlevideo\.com/g, `http:\\\/\\\/localhost:${PORT}\\\/cors-bypass\\\/https:\\\/\\\/$1.googlevideo.com`);
+                        text = text.replace(/"\/\/([a-zA-Z0-9-.]+)\.googlevideo\.com/g, `"${proxyPrefix}https://$1.googlevideo.com`);
+                    }
 
-                    text = text.replace(/https:\/\/www\.gstatic\.com/g, `${proxyPrefix}https://www.gstatic.com`);
-                    text = text.replace(/http:\/\/www\.gstatic\.com/g, `${proxyPrefix}https://www.gstatic.com`);
-                    text = text.replace(/"\/\/www\.gstatic\.com/g, `"${proxyPrefix}https://www.gstatic.com`);
-                    text = text.replace(/\(\/\/www\.gstatic\.com/g, `(${proxyPrefix}https://www.gstatic.com`);
+                    if (text.indexOf('gstatic.com') !== -1) {
+                        text = text.replace(/https:\/\/www\.gstatic\.com/g, `${proxyPrefix}https://www.gstatic.com`);
+                        text = text.replace(/http:\/\/www\.gstatic\.com/g, `${proxyPrefix}https://www.gstatic.com`);
+                        text = text.replace(/"\/\/www\.gstatic\.com/g, `"${proxyPrefix}https://www.gstatic.com`);
+                        text = text.replace(/\(\/\/www\.gstatic\.com/g, `(${proxyPrefix}https://www.gstatic.com`);
+                    }
 
-                    text = text.replace(/https:\/\/yt3\.ggpht\.com/g, `${proxyPrefix}https://yt3.ggpht.com`);
+                    if (text.indexOf('yt3.ggpht.com') !== -1) {
+                        text = text.replace(/https:\/\/yt3\.ggpht\.com/g, `${proxyPrefix}https://yt3.ggpht.com`);
+                    }
 
-                    text = text.replace(/https:\/\/clients1\.google\.com/g, `${proxyPrefix}https://clients1.google.com`);
-                    text = text.replace(/http:\/\/clients1\.google\.com/g, `${proxyPrefix}https://clients1.google.com`);
-                    text = text.replace(/"\/\/clients1\.google\.com/g, `"${proxyPrefix}https://clients1.google.com`);
+                    if (text.indexOf('clients1.google.com') !== -1) {
+                        text = text.replace(/https:\/\/clients1\.google\.com/g, `${proxyPrefix}https://clients1.google.com`);
+                        text = text.replace(/http:\/\/clients1\.google\.com/g, `${proxyPrefix}https://clients1.google.com`);
+                        text = text.replace(/"\/\/clients1\.google\.com/g, `"${proxyPrefix}https://clients1.google.com`);
+                    }
 
-                    text = text.replace('Set(["www.youtube.com","accounts.google.com"]);', 'Set(["www.youtube.com", "accounts.google.com", "localhost"]);');
-                    text = text.replace(/:document\.location\.toString\(\)/g, ':document.location.toString().replace("http://localhost:8099", "https://www.youtube.com")');
-                    text = text.replace(/euri:[^,]+,/g, 'euri:document.location.toString().replace("http://localhost:8099", "https://www.youtube.com"),')
-                    text = text.replace(/https:\/\/s\.youtube\.com/g, `${proxyPrefix}https://s.youtube.com`);
-                    text = text.replace(/redirector.googlevideo.com/g, `${proxyPrefix}https://redirector.googlevideo.com`);
-                    text = text.replace(/this.scheme="https"/, 'this.scheme="http"');
-                    text = text.replace(/https\:\/\/jnn-pa.googleapis.com/g, `${proxyPrefix}https://jnn-pa.googleapis.com`);
-                    text = text.replace(/https:\/\/yt3\.googleusercontent\.com/g, `${proxyPrefix}https://yt3.googleusercontent.com`);
-                    text = text.replace(/"\/\/yt3\.googleusercontent\.com/g, `"${proxyPrefix}https://yt3.googleusercontent.com`);
+                    if (text.indexOf('Set(["www.youtube.com","accounts.google.com"]);') !== -1) {
+                        text = text.replace('Set(["www.youtube.com","accounts.google.com"]);', 'Set(["www.youtube.com", "accounts.google.com", "localhost"]);');
+                    }
+                    if (text.indexOf(':document.location.toString()') !== -1) {
+                        text = text.replace(/:document\.location\.toString\(\)/g, ':document.location.toString().replace("http://localhost:8099", "https://www.youtube.com")');
+                    }
+                    if (text.indexOf('euri:') !== -1) {
+                        text = text.replace(/euri:[^,]+,/g, 'euri:document.location.toString().replace("http://localhost:8099", "https://www.youtube.com"),')
+                    }
+                    if (text.indexOf('s.youtube.com') !== -1) {
+                        text = text.replace(/https:\/\/s\.youtube\.com/g, `${proxyPrefix}https://s.youtube.com`);
+                    }
+                    if (text.indexOf('redirector.googlevideo.com') !== -1) {
+                        text = text.replace(/redirector.googlevideo.com/g, `${proxyPrefix}https://redirector.googlevideo.com`);
+                    }
+                    if (text.indexOf('this.scheme="https"') !== -1) {
+                        text = text.replace(/this.scheme="https"/, 'this.scheme="http"');
+                    }
+                    if (text.indexOf('jnn-pa.googleapis.com') !== -1) {
+                        text = text.replace(/https\:\/\/jnn-pa.googleapis.com/g, `${proxyPrefix}https://jnn-pa.googleapis.com`);
+                    }
+                    if (text.indexOf('yt3.googleusercontent.com') !== -1) {
+                        text = text.replace(/https:\/\/yt3\.googleusercontent\.com/g, `${proxyPrefix}https://yt3.googleusercontent.com`);
+                        text = text.replace(/"\/\/yt3\.googleusercontent\.com/g, `"${proxyPrefix}https://yt3.googleusercontent.com`);
+                    }
 
                     // In order to fix history not working
-                    text = text.replace(/=window\.location\.href;/, '=window.location.href.replace("http://localhost:8099", "https://www.youtube.com");')
-                    text = text.replace(/=document\.location\.href/, '=document.location.href.replace("http://localhost:8099", "https://www.youtube.com")')
+                    if (text.indexOf('=window.location.href;') !== -1) {
+                        text = text.replace(/=window\.location\.href;/, '=window.location.href.replace("http://localhost:8099", "https://www.youtube.com");')
+                    }
+                    if (text.indexOf('=document.location.href') !== -1) {
+                        text = text.replace(/=document\.location\.href/, '=document.location.href.replace("http://localhost:8099", "https://www.youtube.com")')
+                    }
 
                     res.send(text);
                 });

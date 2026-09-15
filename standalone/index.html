@@ -40,10 +40,23 @@
     </style>
     <script>
         "use strict";
-        tizen.tvinputdevice.registerKey("ColorF0Red");
-        tizen.tvinputdevice.registerKey("ColorF1Green");
-        tizen.tvinputdevice.registerKey("ColorF2Yellow");
-        tizen.tvinputdevice.registerKey("ColorF3Blue");
+        function safeRegisterKey(keyName) {
+            try {
+                tizen.tvinputdevice.registerKey(keyName);
+            } catch (e) {
+                // Some Tizen versions/models don't support every key name (e.g. split
+                // MediaPlay/MediaPause on some Tizen 4.0 sets). registerKey() throws in
+                // that case, which used to abort the whole loop below and silently skip
+                // registering every key that came after the unsupported one. Catching
+                // per-key keeps the rest of the keys registering normally.
+                console.warn("TizenTube: could not register key " + keyName + ": " + e.message);
+            }
+        }
+
+        safeRegisterKey("ColorF0Red");
+        safeRegisterKey("ColorF1Green");
+        safeRegisterKey("ColorF2Yellow");
+        safeRegisterKey("ColorF3Blue");
 
         const keys = [
             "MediaPlayPause",
@@ -57,7 +70,7 @@
         ];
 
         for (let i = 0; i < keys.length; i++) {
-            tizen.tvinputdevice.registerKey(keys[i]);
+            safeRegisterKey(keys[i]);
         }
 
         const pkgId = tizen.application.getCurrentApplication().appInfo.packageId;
@@ -73,6 +86,18 @@
             } catch (e) {
                 // Do nothing.
             }
+            // Try "injector mode" first when available: it connects the debugger
+            // to a real https://youtube.com/tv load with NO local proxy in the
+            // request path at all (every thumbnail/API call/video segment goes
+            // straight to Google's servers), which is why the original app feels
+            // smooth. We previously forced "proxy mode" unconditionally here
+            // because injector mode's Play/Pause/FastForward/Rewind weren't
+            // working -- see injector.js for the fix we're now trying there
+            // (navigating via location.href instead of CDP Page.navigate(), to
+            // match how proxy mode -- whose buttons DO work -- triggers its own
+            // navigation). If injector mode still doesn't deliver key events
+            // reliably, fall back to proxy mode, which is slower but known to
+            // keep the buttons working.
             fetch('http://localhost:8099/tizentube/getState')
                 .then(r => r.json())
                 .then(res => {
@@ -98,6 +123,7 @@
 
 <body
     style="background-color: #0f0f0f; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <img src="icon.png" alt="TizenTube" style="width: 160px; height: 160px; margin-bottom: 24px;" />
     <h1
         style="color: #FFFFFF; font-size: 80px; font-family: Roboto,Noto Sans CJK ZH-HK,Noto Sans Thai,Arial,Helvetica,sans-serif; margin: 0;">
         TizenTube
