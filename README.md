@@ -23,7 +23,6 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 3- Changed code of "SponserBlock" to make segment colors doesn't disappear when seeking the video on progress bar + when "auto-skip" toggle option is enabled for a specific category, when come back to the same segment is asks for confirmation and doesn't auto-skip in the second time for the single segment + SponserBlock works when being in the range time of the segment ( no need watch the video normally to skip the sponser ) ; so it means that if you seeked the video time to the time in the range of the segment SponserBlock will work perfectly + when it skip an "Ending/credits" in the end of the video it auto-plays to the next video instead of re-playing the same video.
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js).
 4- Splitted "Fix UI" option to 6 options:
-<<<<<<< ours
  - Disable limited-memory mode.
  - Full-animation app quality.
  - Enable list animations.
@@ -37,23 +36,6 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
  - Chromecast (Android 14).
  - TCL Smart TV Pro (Android 12).
  - Amazon AFTMM (Android 7.1.2)
-=======
-
-- Disable limited-memory mode.
-- Full-animation app quality.
-- Enable list animations.
-- Enable long press.
-- Remove app-quality class.
-- Keep app-quality class.
-5- Being able to choose the client for user-agent spoofing:
-- OFF (no spoofing).
-- Tizen 4.0 (Samsung 2018).
-- Sony SOV38 (Android 10).
-- Chromecast (Android 14).
-- TCL Smart TV Pro (Android 12).
-- Amazon AFTMM (Android 7.1.2).
-
->>>>>>> theirs
 6- Disable animations ( window transitions ).
 7- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).
 8- Black Amoled theme.
