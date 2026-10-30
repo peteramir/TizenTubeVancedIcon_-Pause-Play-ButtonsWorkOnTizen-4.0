@@ -8,7 +8,7 @@ Download from [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Pla
 
 This Standalone verion is forked from 2.0.1 Version.
 
-It receives updates from [here]([url](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js)) ( I own this file and it's up-to-date ).
+It receives updates from [here](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) ( I own this file and it's up-to-date ).
 
 I could fix "pause" and "play" buttons on Tizen 4.0 legacy TV with exact same remote in the attached photo ( the last line from the bottom ).
 <img  width="300px" src=".github/assets/Samsung_TV_Remote.png">
