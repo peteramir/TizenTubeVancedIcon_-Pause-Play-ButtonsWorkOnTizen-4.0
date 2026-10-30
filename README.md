@@ -4,7 +4,7 @@
     <img width="600px" src=".github/assets/TizenTube Standalone Banner.png">
 </p>
 
-Download from [here]([url](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube_userScript.wgt)) ( it can be installed besides the official TizenTube because it has different packageID and a different icon ).
+Download from [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube_userScript.wgt) ( it can be installed besides the official TizenTube because it has different packageID and a different icon ).
 
 This Standalone verion is forked from 2.0.1 Version.
 
@@ -46,3 +46,5 @@ Notes: I could make subtitles sync work again!
 Steps to fix broken subtitle sync:
 - Enable these options in "Fix UI": Disable limited-memory mode + Full-animation app quality + Enable list animations + Enable long press + Keep app-quality class.
 - Enable "Tizen 4.0 (Samsung 2018)" from "user-agent spoofing".
+
+Credits goes to: [Reis]([url](https://github.com/reisxd/TizenTube)) the header of this project for doing the hard parts.
