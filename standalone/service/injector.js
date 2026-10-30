@@ -30,7 +30,7 @@ function connectToDebugger(host, port, args) {
                 const bootstrap = `
                     (function () {
                         var main = document.createElement('script');
-                        main.src = 'https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js?ver=${Date.now()}';
+                        main.src = 'https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js?ver=${Date.now()}';
                         main.async = false;
                         document.head.appendChild(main);
                         var patch = document.createElement('script');

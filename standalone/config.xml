@@ -2,7 +2,8 @@
 <widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="https://tizentube.app" version="2.0.1" viewmodes="maximized">
     <access origin="*" subdomains="true"></access>
     <tizen:allow-navigation href="*"/>
-    <tizen:application id="xvvl3S1TT1.TizenTubeStandalone" package="xvvl3S1TT1" required_version="3.0"/>
+    <!-- Here -->
+    <tizen:application id="mine3S1TT5.TizenTubeStandalone" package="mine3S1TT5" required_version="3.0"/> 
     <author href="https://tizentube.app">Reis Can</author>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
@@ -29,7 +30,8 @@
     <tizen:privilege name="http://tizen.org/privilege/unlimitedstorage"/>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:profile name="tv-samsung"/>
-    <tizen:service id="xvvl3S1TT1.StandaloneService">
+    <!-- Here -->
+    <tizen:service id="mine3S1TT5.StandaloneService">
         <tizen:content src="service/dist/index.js"/>
         <tizen:name>StandaloneService</tizen:name>
         <tizen:description>StandaloneService</tizen:description>

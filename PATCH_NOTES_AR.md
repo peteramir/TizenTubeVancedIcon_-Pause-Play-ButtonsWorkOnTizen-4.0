@@ -288,7 +288,7 @@ location.href = `http://localhost:8099/tv?additionalDataUrl=http%3A%2F%2Flocalho
 ```bash
 cd standalone
 mkdir release
-tizenjs build . -t wgt -o release/TizenTube.wgt --author F:\PETER\TizenBrew\Tizen_Certificate\myprofile9/author.p12 --authorPwd Aa111111 -p public --ignore node_modules,/.*\.wgt$/,/userwidget/,/release/
+tizenjs build . -t wgt -o release/TizenTube_userScript.wgt --author F:\PETER\TizenBrew\Tizen_Certificate\myprofile9/author.p12 --authorPwd Aa111111 -p public --ignore node_modules,/.*\.wgt$/,/userwidget/,/release/
 ```
 
 - `tizenjs` أداة مجتمعية (مش Tizen Studio الرسمية) من نفس مطور TizenTube:
@@ -299,9 +299,11 @@ tizenjs build . -t wgt -o release/TizenTube.wgt --author F:\PETER\TizenBrew\Tize
   بتاعه).
 - بعد ما يخلص، تقدر تتأكد إن كل حاجة اتحزمت صح بفك ضغط ملف الـ `.wgt` نفسه (هو
   أساسًا ملف zip):
+
   ```bash
   unzip -l release/TizenTube.wgt | grep -E "service/dist|dist/service|icon"
   ```
+
   المفروض تشوف `service/dist/index.js`، `service/dist/patch.js`،
   `dist/service.js`، و `icon.png`/`icon_16b9.png` كلهم موجودين.
 
