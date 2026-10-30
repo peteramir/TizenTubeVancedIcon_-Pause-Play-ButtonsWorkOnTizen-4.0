@@ -47,4 +47,8 @@ Steps to fix broken subtitle sync:
 - Enable these options in "Fix UI": Disable limited-memory mode + Full-animation app quality + Enable list animations + Enable long press + Keep app-quality class.
 - Enable "Tizen 4.0 (Samsung 2018)" from "user-agent spoofing".
 
-Credits goes to: [Reis]([url](https://github.com/reisxd/TizenTube)) the header of this project for doing the hard parts.
+## ⚠️ Disclaimer
+
+**This project is NOT affiliated, associated, authorized, endorsed by, or in any way officially connected with Samsung, Tizen, or YouTube.**
+
+Credits goes to [Reis](https://github.com/reisxd/TizenTube) the Header of this project for doing the hard parts.
