@@ -4,17 +4,43 @@
     <img width="600px" src=".github/assets/TizenTube Standalone Banner.png">
 </p>
 
-**This is a fork of https://github.com/reisxd/TizenTube repo**
-**This fork made mainly to fix "pause" , "play" , "seeking forward" , "seeking backward" buttons on Tizen 4.0 TV buttons**
-
 This Standalone verion is forked from 2.0.1 Version.
 
-It receives updates from: cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js ; so it's up to date with latest patches ( check releases page for more details: https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/tag/fixes )
+It receives updates from [here]([url](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js)) ( I own this file and it's up-to-date ).
 
-The exact remote which I fixed: "pause" and "play" buttons on ( the last line from the bottom )
+I could fix "pause" and "play" buttons on Tizen 4.0 legacy TV with exact same remote in the attached photo ( the last line from the bottom ).
 <img  width="300px" src=".github/assets/Samsung_TV_Remote.png">
 
 Note: My Samsung TV model is: ua49n5300 49 inch ( this fork only tested on Tizen 4.0 )
 
-I could make userscript to seek 10+/10- without showing the annoying UI with just a single tap checkout [my userscript]([url](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/myCustom-userScript-manified.js)) , you can use it directly from [here]([url](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube_CDN2.wgt)):
-`!function () { "use strict"; var e = true; var t = true; var r = false; var n = null; var i = []; var a = null; function o(e) { if (!r) return; try { i.push(e); if (i.length > 6) i.shift(); var t = document.body || document.documentElement; if (!t) return; if (!n) { n = document.createElement("div"); n.style.cssText = "position:fixed;top:8px;left:8px;z-index:2147483647;" + "background:rgba(0,0,0,0.85);color:#0f0;font:20px/1.3 monospace;" + "padding:6px 10px;white-space:pre;pointer-events:none" } n.textContent = i.join("\n"); if (!n.parentNode) t.appendChild(n); clearTimeout(a); a = setTimeout(function () { if (n && n.parentNode) n.parentNode.removeChild(n) }, 8e3) } catch (e) { } } if (e) { try { !function () { "use strict"; if (!window.__ttArrowSeekInstalled) { window.__ttArrowSeekInstalled = !0; var e = {}, t = 10; document.addEventListener("keydown", n, !0), document.addEventListener("keyup", n, !0) } function r(e) { for (; e && e !== document;) { var t = window.getComputedStyle(e); if ("true" === e.getAttribute("aria-hidden") || e.classList && e.classList.contains("zylon-hidden") || "none" === t.display || "hidden" === t.visibility) return !0; e = e.parentNode } return !1 } function n(n) { if (function (e) { return "ArrowLeft" === e.key || "ArrowRight" === e.key || 37 === e.keyCode || 39 === e.keyCode }(n)) { var i = n.keyCode || n.which, a = 39 === i ? 1 : -1; if ("keyup" === n.type) { if (!e[i]) return; return n.preventDefault(), n.stopImmediatePropagation(), void delete e[i] } if (!(n.altKey || n.ctrlKey || n.metaKey || n.shiftKey || (o = n.target) && (o.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(o.tagName || "")))) { var o, u = document.querySelector("video"); if (u && !u.paused && !u.ended) { if (!e[i]) { if (function (e) { if (!e || !e.closest) return !1; var t = e.closest("ytlr-tile-renderer"); return !(!t || r(t)) }(n.target)) return; if (function () { var e, t, n, i = ["ytlr-player-page", "ytlr-player-actions-container", "ytlr-progress-bar"]; for (e = 0; e < i.length; e++)if ((t = document.querySelector(i[e])) && !r(t) && "hidden" !== (n = window.getComputedStyle(t)).visibility && parseFloat(n.opacity) > 0 && t.getClientRects().length > 0) return !0; return !1 }()) return; e[i] = !0 } n.preventDefault(), n.stopImmediatePropagation(), function (e, r) { var n = e.currentTime + r * t, i = e.duration; n < 0 && (n = 0), isFinite(i) && n > i && (n = i), e.currentTime = n }(u, a) } } } } }() } catch (e) { } } function u() { var e = "app-quality-root"; var t = 0; var r = 0; var n = []; var i = false; var a = false; var u = null; function s() { a = false; if (i) return; var t = document.body; if (!t || t.classList.contains(e)) return; var s = Date.now(); n.push(s); while (n.length && s - n[0] > 5e3) n.shift(); if (n.length > 20) { i = true; if (u) u.disconnect(); o("guard: class keeps getting removed - observer stopped"); return } t.classList.add(e); r++; if (r === 1 || r % 10 === 0) o("guard: class restored x" + r) } function d() { if (!a && !i) { a = true; setTimeout(s, 0) } } function l() { var r = document.body; if (!r) return false; if (r.__ttQualityGuard) return true; r.__ttQualityGuard = true; var n = r.classList; var i = n.remove; var a = n.toggle; n.remove = function () { var r = []; for (var a = 0; a < arguments.length; a++) { if (arguments[a] !== e) r.push(arguments[a]) } if (r.length !== arguments.length) { t++; if (t === 1 || t % 10 === 0) o("guard: blocked remove() x" + t) } if (r.length) return i.apply(n, r) }; n.toggle = function (r, i) { if (r === e && (i === false || i === undefined && n.contains(e))) { t++; return true } return a.apply(n, arguments) }; if (u) u.disconnect(); if (typeof MutationObserver === "function") { u = new MutationObserver(function () { if (!r.classList.contains(e)) d() }); u.observe(r, { attributes: true, attributeFilter: ["class"] }) } if (!n.contains(e)) n.add(e); o("guard: installed"); return true } if (!l()) { var c = setInterval(function () { try { if (l()) clearInterval(c) } catch (e) { clearInterval(c) } }, 100) } setInterval(function () { try { if (!document.body) return; if (!document.body.__ttQualityGuard) l(); else d() } catch (e) { } }, 2e3) } if (t) { try { u() } catch (e) { o("guard: FAILED") } } }();`
+Reasons to install this fork:
+I added these toggle options to [Reis's userScript.js]([url](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js)):
+1- Refresh page 'F5' ( press on it after making changes in toggle options ).
+2- Changed code of "Adblock" to modify the response of json parsing of adPlacement
+Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js)
+3- Changed code of "SponserBlock" to make segment colors doesn't disappear when seeking the video on progress bar + when "auto-skip" toggle option is enabled for a specific category, when come back to the same segment is asks for confirmation and doesn't auto-skip in the second time for the single segment + SponserBlock works when being in the range time of the segment ( no need watch the video normally to skip the sponser ) ; so it means that if you seeked the video time to the time in the range of the segment SponserBlock will work perfectly + when it skip an "Ending/credits" in the end of the video it auto-plays to the next video instead of re-playing the same video.
+Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js)
+4- Splitted "Fix UI" option to 6 options:
+	- Disable limited-memory mode(restart app)
+	- Full-animation app quality(restart app)
+	- Enable list animations(restart app)
+	- Enable long press(restart app)
+	- Remove app-quality class (breaks subtitle sync, restart)
+	- Keep app-quality class (re-adds it if removed, overrides)
+5- Being able to choose the client for user-agent spoofing:
+	- OFF (no spoofing)
+	- Tizen 4.0 (Samsung 2018)
+	- Sony SOV38 (Android 10)
+	- Chromecast (Android 14)
+	- TCL Smart TV Pro (Android 12)
+	- Amazon AFTMM (Android 7.1.2)
+6- Disable animations ( windows transitions ).
+7- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).
+8- Black Amoled theme.
+Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [here](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js)
+9- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.
+
+Notes: I could make subtitles sync work again!
+Steps to fix broken subtitle sync:
+- Enable these options in "Fix UI": Disable limited-memory mode + Full-animation app quality + Enable list animations + Enable long press + Keep app-quality class.
+- Enable "Tizen 4.0 (Samsung 2018)" from "user-agent spoofing".
