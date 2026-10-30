@@ -1,8 +1,10 @@
-# ▶️ TizenTube ( with Vanced legacy icon in the 3 releases )
+# ▶️ TizenTube ( with Vanced legacy icon )
 
 <p align="center">
     <img width="600px" src=".github/assets/TizenTube Standalone Banner.png">
 </p>
+
+Download from [here]([url](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube_userScript.wgt)) ( it can be installed besides the official TizenTube because it has different packageID and a different icon ).
 
 This Standalone verion is forked from 2.0.1 Version.
 
