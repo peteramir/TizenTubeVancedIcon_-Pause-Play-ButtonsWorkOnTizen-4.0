@@ -27,7 +27,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 
 - segment colors doesn't disappear when seeking the video on progress bar + when "auto-skip" toggle option is enabled for a specific category, when come back to the same segment is asks for confirmation and doesn't auto-skip in the second time for the single segment.
 - SponserBlock works when being in the range time of the segment ( no need watch the video normally to skip the sponser ) ; so it means that if you seeked the video time to the time in the range of the segment SponserBlock will work perfectly.
-- when it skip an "Ending/credits" in the end of the video it auto-plays to the next video instead of re-playing the same video.
+- when it skip an "Ending/credits" in the end of the video it auto-plays to the next video instead of re-playing the same video ( works only Vaccumtube , it doesn't work on Tizen 4.0 OS ).
 
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js).
 
