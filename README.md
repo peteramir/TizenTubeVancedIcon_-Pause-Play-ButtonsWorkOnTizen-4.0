@@ -20,7 +20,7 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 
 1- Refresh page 'F5' ( press on it after making changes in toggle options ).
 
-2- Changed code of "Adblock" to modify the response of json parsing of adPlacement
+2- Changed code of "Adblock" to modify the response of json parsing of adPlacement ( no full-screen ad shown on home feed ) ( this method is undetectable with no buffering ).
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
 3- Changed code of "SponserBlock" to make:
