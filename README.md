@@ -15,7 +15,7 @@ I could fix "pause" and "play" buttons on Tizen 4.0 legacy TV with exact same re
 
 Note: My Samsung TV model is: ua49n5300 49 inch ( this fork only tested on Tizen 4.0 )
 
-Reasons to install this fork:
+Reasons to install this fork ( can be installed beside the installed app since my fork have a different packageID + different icon ):
 I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js):
 
 1- Refresh page 'F5' ( press on it after making changes in toggle options ).
