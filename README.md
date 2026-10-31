@@ -21,6 +21,7 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 1- Refresh page 'F5' ( press on it after making changes in toggle options ).
 
 2- Changed code of "Adblock" to modify the response of json parsing of adPlacement ( no full-screen ad shown on home feed ) ( this method is undetectable with no buffering ).
+
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
 3- Changed code of "SponserBlock" to make:
@@ -54,6 +55,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 7- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).
 
 8- Black Amoled theme.
+
 Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [here](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
 
 9- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.
