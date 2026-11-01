@@ -24,7 +24,7 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
-3- Changed code of "SponserBlock" to make:
+3- Changed code of "SponserBlock" ( modified the initianlizing SponserBlock in the project to fix the memoryleak ) to make:
 
 - segment colors doesn't disappear when seeking the video on progress bar + when "auto-skip" toggle option is enabled for a specific category, when come back to the same segment is asks for confirmation and doesn't auto-skip in the second time for the single segment.
 - SponserBlock works when being in the range time of the segment ( no need watch the video normally to skip the sponser ) ; so it means that if you seeked the video time to the time in the range of the segment SponserBlock will work perfectly.
@@ -60,11 +60,12 @@ Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.g
 
 9- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.
 
-Notes: I could make subtitles sync work again!
-Steps to fix broken subtitle sync:
-
-- Enable these options in "Fix UI": Disable limited-memory mode + Full-animation app quality + Enable list animations + Enable long press + Keep app-quality class.
-- Enable "Tizen 4.0 (Samsung 2018)" from "user-agent spoofing".
+10- "Fix Subtitle Sync" option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle takes 66% of the screen of the TV.
+Notes:
+- "Fix Subtitle sync" option works on the current playing video and the next playing video only ( it's a known bug ).
+- It's recommended to enable these options ( I enable these personally to fix subtitle sync ):
+    - Enable these options in "Fix UI": Disable limited-memory mode + Full-animation app quality + Enable list animations + Enable long press.
+    - Enable "Tizen 4.0 (Samsung 2018)" from "user-agent spoofing".
 
 ## ⚠️ Disclaimer
 
