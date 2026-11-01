@@ -50,7 +50,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 - TCL Smart TV Pro (Android 12).
 - Amazon AFTMM (Android 7.1.2)
 
-6- Disable animations ( window transitions ).
+6- Disable animations ( it's a bad option don't enable it, I added it in case anybody like this option, enabling this option makes thumbnails and video Titles load slower while navigating on the home feed + makes a noticable delay in the subtitle sync, don't enable this option unless you are okay with these 2 downsides ).
 
 7- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).
 
