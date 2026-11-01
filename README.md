@@ -60,12 +60,12 @@ Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.g
 
 9- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.
 
-10- "Fix Subtitle Sync" option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle takes 66% of the screen of the TV.
+10- "Fix Subtitle Sync": I added an option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle takes 66% of the screen of the TV.
 Notes:
-- "Fix Subtitle sync" option works on the current playing video and the next playing video only ( it's a known bug ).
+- "Fix Subtitle sync" option works on the current playing video and the next playing video only ( it's a known bug for not working only on the selected video ) ( it's one-time-use button, only use it when facing a broken subtitle sync not on all videos because not all videos have the subtitle sync problem ).
 - It's recommended to enable these options ( I enable these personally to fix subtitle sync ):
     - Enable these options in "Fix UI": Disable limited-memory mode + Full-animation app quality + Enable list animations + Enable long press.
-    - Enable "Tizen 4.0 (Samsung 2018)" from "user-agent spoofing".
+    - Enable: "No Spoofing" option.
 
 ## ⚠️ Disclaimer
 
