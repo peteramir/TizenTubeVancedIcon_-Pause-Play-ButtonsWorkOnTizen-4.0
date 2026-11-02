@@ -32,7 +32,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js).
 
-4- Splitted "Fix UI" option to 6 options:
+4- Splitted "Fix UI" option to 6 options ( enable only the first 4 ) ( enabling "Fix UI" toggle option in [Reis's userSCript]([url](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js)) checks the first 5 options together ):
 
 - Disable limited-memory mode.
 - Full-animation app quality.
@@ -41,7 +41,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 - Remove app-quality class.
 - Keep app-quality class.
 
-5- Being able to choose the client for user-agent spoofing:
+5- Being able to choose the client for user-agent spoofing ( you won't need to use this option, just enable "no spoofing" option" ):
 
 - OFF (no spoofing).
 - Tizen 4.0 (Samsung 2018).
@@ -53,6 +53,10 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 6- Disable animations ( it's a bad option don't enable it, I added it in case anybody like this option, enabling this option makes thumbnails and video Titles load slower while navigating on the home feed + makes a noticable delay in the subtitle sync, don't enable this option unless you are okay with these 2 downsides ).
 
 7- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).
+Notes:
+- Seeking with 1 tap doesn't work when the video is paused ( I made it intentionally to be able to navigate between ending cards but you need to pause the video first ).
+- I didn't like to make "ok" button to pause the video because I used to using "pause" and "play" buttons on the remote.
+- if you are changing video settings like quality/speed while the video is playing and you tapped on left/right on the remote in seek 10+/10-.
 
 8- Black Amoled theme.
 
