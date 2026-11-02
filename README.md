@@ -32,7 +32,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js).
 
-4- Splitted "Fix UI" option to 6 options ( enable only the first 4 ) ( enabling "Fix UI" toggle option in [Reis's userSCript]([url](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js)) checks the first 5 options together ):
+4- Splitted "Fix UI" option to 6 options ( enable only the first 4 ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
 
 - Disable limited-memory mode.
 - Full-animation app quality.
