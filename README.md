@@ -77,4 +77,6 @@ Notes:
 
 Send me a message on my Telegram and tell me if it helped you with your own Tizen 4.0: https://t.me/uesrname4 ( copy the username don't spell it ).
 
+Forks I appreciate its work: [axotube](https://github.com/TizenDroid/axotube) | [KrX3D](https://github.com/KrX3D/TizenTube)
+
 Credits goes to [Reis](https://github.com/reisxd/TizenTube) the Header of this project for doing the hard parts.
