@@ -75,7 +75,7 @@ Notes:
 
 **This project is NOT affiliated, associated, authorized, endorsed by, or in any way officially connected with Samsung, Tizen, or YouTube.**
 
-Send me a message on my Telegram and tell me if it helped you with your own Tizen 4.0: https://t.me/uesrname4 ( copy the username don't spell it ).
+Send me a message on my Telegram and tell me if it helped you with your own Tizen 4.0: https://t.me/username309x
 
 Forks I appreciate its work: [axotube](https://github.com/TizenDroid/axotube) | [KrX3D](https://github.com/KrX3D/TizenTube)
 
