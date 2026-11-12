@@ -26,13 +26,30 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/showing_only_videos_and_playlists_when_visiting_a_channel.jpg" width="800" alt="Showing only videos and playlists when visiting a channel">
 
-3- Refresh page 'F5' ( press on it after making changes in toggle options ).
+3- "Fix Subtitle Sync": I added an option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle takes 66% of the screen of the TV.
+Notes:
+- "Fix Subtitle sync" option works on the current playing video and the next playing video only ( it's a known bug for not working only on the selected video ) ( it's one-time-use button, only use it when facing a broken subtitle sync not on all videos because not all videos have the subtitle sync problem ).
+- It's recommended to enable these options ( I enable these personally to fix subtitle sync ):
+    - Enable these options in "Fix UI": Disable limited-memory mode + Full-animation app quality + Enable list animations + Enable long press.
+    - Enable: "No Spoofing" option.
+ 
+<img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/fix_subtitle_sync_for_the_current_video.png" width="800" alt="Fix Subtitle Sync">
 
-4- Changed code of "Adblock" to modify the response of json parsing of adPlacement ( still full-screen ad shown on home feed appears sometimes because it's part of the fetch request itself and have an order like that: ```::nth(1)``` ; so removing it means removing recommended videos when there is no full-screen ad ) ( this method is undetectable with no buffering ).
+4- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).
+Notes:
+- Seeking with 1 tap doesn't work when the video is paused ( I made it intentionally to be able to navigate between ending cards but you need to pause the video first ).
+- I didn't like to make "ok" button to pause the video because I used to using "pause" and "play" buttons on the remote.
+- if you are changing video settings like quality/speed while the video is playing and you tapped on left/right on the remote in seek 10+/10-.
+
+5- Black Amoled theme.
+
+Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [here](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
+
+6- Changed code of "Adblock" to modify the response of json parsing of adPlacement ( still full-screen ad shown on home feed appears sometimes because it's part of the fetch request itself and have an order like that: ```::nth(1)``` ; so removing it means removing recommended videos when there is no full-screen ad ) ( this method is undetectable with no buffering ).
 
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
-5- Changed code of "SponserBlock" ( modified the initianlizing SponserBlock in the project to fix the memoryleak ) to make:
+7- Changed code of "SponserBlock" ( modified the initianlizing SponserBlock in the project to fix the memoryleak ) to make:
 
 - segment colors doesn't disappear when seeking the video on progress bar + when "auto-skip" toggle option is enabled for a specific category, when come back to the same segment is asks for confirmation and doesn't auto-skip in the second time for the single segment.
 - SponserBlock works when being in the range time of the segment ( no need watch the video normally to skip the sponser ) ; so it means that if you seeked the video time to the time in the range of the segment SponserBlock will work perfectly.
@@ -40,7 +57,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js).
 
-6- Splitted "Fix UI" option to 6 options ( enable only the first 4 ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
+8- Splitted "Fix UI" option to 6 options ( enable only the first 4 ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
 
 - Disable limited-memory mode.
 - Full-animation app quality.
@@ -49,7 +66,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 - Remove app-quality class.
 - Keep app-quality class.
 
-7- Being able to choose the client for user-agent spoofing ( mostly a useless feature ):
+9- Being able to choose the client for user-agent spoofing ( mostly a useless feature ):
 
 - OFF (no spoofing).
 - Tizen 4.0 (Samsung 2018).
@@ -58,28 +75,13 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 - TCL Smart TV Pro (Android 12).
 - Amazon AFTMM (Android 7.1.2)
 
-8- Disable animations ( it's a bad option don't enable it, I added it in case anybody like this option, enabling this option makes thumbnails and video Titles load slower while navigating on the home feed + makes a noticable delay in the subtitle sync, don't enable this option unless you are okay with these 2 downsides ).
-
-9- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).
-Notes:
-- Seeking with 1 tap doesn't work when the video is paused ( I made it intentionally to be able to navigate between ending cards but you need to pause the video first ).
-- I didn't like to make "ok" button to pause the video because I used to using "pause" and "play" buttons on the remote.
-- if you are changing video settings like quality/speed while the video is playing and you tapped on left/right on the remote in seek 10+/10-.
-
-10- Black Amoled theme.
-
-Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [here](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
+10- Disable animations ( it's a bad option don't enable it, I added it in case anybody like this option, enabling this option makes thumbnails and video Titles load slower while navigating on the home feed + makes a noticable delay in the subtitle sync, don't enable this option unless you are okay with these 2 downsides ).
 
 11- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.
 
 you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/standalone/service/patch.js)
 
-12- "Fix Subtitle Sync": I added an option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle takes 66% of the screen of the TV.
-Notes:
-- "Fix Subtitle sync" option works on the current playing video and the next playing video only ( it's a known bug for not working only on the selected video ) ( it's one-time-use button, only use it when facing a broken subtitle sync not on all videos because not all videos have the subtitle sync problem ).
-- It's recommended to enable these options ( I enable these personally to fix subtitle sync ):
-    - Enable these options in "Fix UI": Disable limited-memory mode + Full-animation app quality + Enable list animations + Enable long press.
-    - Enable: "No Spoofing" option.
+12- Refresh page 'F5' ( press on it after making changes in toggle options ).
 
 ## ⚠️ Disclaimer
 
