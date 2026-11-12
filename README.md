@@ -28,7 +28,7 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 
 3- Refresh page 'F5' ( press on it after making changes in toggle options ).
 
-4- Changed code of "Adblock" to modify the response of json parsing of adPlacement ( no full-screen ad shown on home feed ) ( this method is undetectable with no buffering ).
+4- Changed code of "Adblock" to modify the response of json parsing of adPlacement ( still full-screen ad shown on home feed appears sometimes because it's part of the fetch request itself and have an order like that: ```::nth(1)``` ; so removing it means removing recommended videos when there is no full-screen ad ) ( this method is undetectable with no buffering ).
 
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
