@@ -23,7 +23,7 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/listing_3_videos_in_row_for_playlists.jpg" width="800" alt="Listing 3 videos in a row for playlists">
 
 2- Showing only videos and playlists when visiting a channel ( you still can scroll to bottom and click on "videos" to be able to sort the videos from "most popular" and to to list 3 videos in the row ).
-https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/
+
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/showing_only_videos_and_playlists_when_visiting_a_channel.jpg" width="800" alt="Showing only videos and playlists when visiting a channel">
 
 3- Refresh page 'F5' ( press on it after making changes in toggle options ).
