@@ -72,6 +72,8 @@ Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.g
 
 11- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.
 
+you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/standalone/service/patch.js)
+
 12- "Fix Subtitle Sync": I added an option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle takes 66% of the screen of the TV.
 Notes:
 - "Fix Subtitle sync" option works on the current playing video and the next playing video only ( it's a known bug for not working only on the selected video ) ( it's one-time-use button, only use it when facing a broken subtitle sync not on all videos because not all videos have the subtitle sync problem ).
