@@ -18,13 +18,21 @@ Note: My Samsung TV model is: ua49n5300 49 inch ( this fork only tested on Tizen
 Reasons to install this fork ( can be installed beside the installed app since my fork have a different packageID + different icon ):
 I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js):
 
-1- Refresh page 'F5' ( press on it after making changes in toggle options ).
+1- Listing 3 videos in row for playlists
 
-2- Changed code of "Adblock" to modify the response of json parsing of adPlacement ( no full-screen ad shown on home feed ) ( this method is undetectable with no buffering ).
+<img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/listing_3_videos_in_row_for_playlists.jpg" width="800" alt="Listing 3 videos in a row for playlists">
+
+2- Showing only videos and playlists when visiting a channel ( you still can scroll to bottom and click on "videos" to be able to sort the videos from "most popular" and to to list 3 videos in the row ).
+https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/
+<img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/showing_only_videos_and_playlists_when_visiting_a_channel.jpg" width="800" alt="Showing only videos and playlists when visiting a channel">
+
+3- Refresh page 'F5' ( press on it after making changes in toggle options ).
+
+4- Changed code of "Adblock" to modify the response of json parsing of adPlacement ( no full-screen ad shown on home feed ) ( this method is undetectable with no buffering ).
 
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
-3- Changed code of "SponserBlock" ( modified the initianlizing SponserBlock in the project to fix the memoryleak ) to make:
+5- Changed code of "SponserBlock" ( modified the initianlizing SponserBlock in the project to fix the memoryleak ) to make:
 
 - segment colors doesn't disappear when seeking the video on progress bar + when "auto-skip" toggle option is enabled for a specific category, when come back to the same segment is asks for confirmation and doesn't auto-skip in the second time for the single segment.
 - SponserBlock works when being in the range time of the segment ( no need watch the video normally to skip the sponser ) ; so it means that if you seeked the video time to the time in the range of the segment SponserBlock will work perfectly.
@@ -32,7 +40,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js).
 
-4- Splitted "Fix UI" option to 6 options ( enable only the first 4 ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
+6- Splitted "Fix UI" option to 6 options ( enable only the first 4 ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
 
 - Disable limited-memory mode.
 - Full-animation app quality.
@@ -41,7 +49,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 - Remove app-quality class.
 - Keep app-quality class.
 
-5- Being able to choose the client for user-agent spoofing ( you won't need to use this option, just enable "no spoofing" option" ):
+7- Being able to choose the client for user-agent spoofing ( mostly a useless feature ):
 
 - OFF (no spoofing).
 - Tizen 4.0 (Samsung 2018).
@@ -50,21 +58,21 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 - TCL Smart TV Pro (Android 12).
 - Amazon AFTMM (Android 7.1.2)
 
-6- Disable animations ( it's a bad option don't enable it, I added it in case anybody like this option, enabling this option makes thumbnails and video Titles load slower while navigating on the home feed + makes a noticable delay in the subtitle sync, don't enable this option unless you are okay with these 2 downsides ).
+8- Disable animations ( it's a bad option don't enable it, I added it in case anybody like this option, enabling this option makes thumbnails and video Titles load slower while navigating on the home feed + makes a noticable delay in the subtitle sync, don't enable this option unless you are okay with these 2 downsides ).
 
-7- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).
+9- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).
 Notes:
 - Seeking with 1 tap doesn't work when the video is paused ( I made it intentionally to be able to navigate between ending cards but you need to pause the video first ).
 - I didn't like to make "ok" button to pause the video because I used to using "pause" and "play" buttons on the remote.
 - if you are changing video settings like quality/speed while the video is playing and you tapped on left/right on the remote in seek 10+/10-.
 
-8- Black Amoled theme.
+10- Black Amoled theme.
 
 Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [here](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
 
-9- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.
+11- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.
 
-10- "Fix Subtitle Sync": I added an option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle takes 66% of the screen of the TV.
+12- "Fix Subtitle Sync": I added an option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle takes 66% of the screen of the TV.
 Notes:
 - "Fix Subtitle sync" option works on the current playing video and the next playing video only ( it's a known bug for not working only on the selected video ) ( it's one-time-use button, only use it when facing a broken subtitle sync not on all videos because not all videos have the subtitle sync problem ).
 - It's recommended to enable these options ( I enable these personally to fix subtitle sync ):
