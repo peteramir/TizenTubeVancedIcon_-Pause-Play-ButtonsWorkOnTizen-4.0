@@ -6,7 +6,7 @@
 
 Download from [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube.wgt) ( it can be installed besides the official TizenTube because it has different packageID and a different icon ).
 
-This Standalone verion is forked from 2.0.1 Version.
+This Standalone verion is forked from [2.0.1 Version](https://github.com/reisxd/TizenTube/releases/tag/v2.0.1)
 
 It receives updates from [here](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) ( I own this file and it's up-to-date ) ( I wrote the userScript to be minified js code + made it ES5-compatible to ensure it works on older Chromium versions, such as M56 on Tizen 4.0. ).
 
@@ -45,11 +45,11 @@ Notes:
 
 Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [here](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
 
-6- Changed code of "Adblock" to modify the response of json parsing of adPlacement ( still full-screen ad shown on home feed appears sometimes because it's part of the fetch request itself and have an order like that: ```::nth(1)``` ; so removing it means removing recommended videos when there is no full-screen ad ) ( this method is undetectable with no buffering ).
+6- Changed code of "Adblock".
 
 Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
-7- Changed code of "SponserBlock" ( modified the initianlizing SponserBlock in the project to fix the memoryleak ) to make:
+7- Changed code of "SponserBlock" ( modified the initianlizing SponserBlock in the project to fix the memoryleak ). I modified [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js) code to add these 3 features :
 
 - segment colors doesn't disappear when seeking the video on progress bar + when "auto-skip" toggle option is enabled for a specific category, when come back to the same segment is asks for confirmation and doesn't auto-skip in the second time for the single segment.
 - SponserBlock works when being in the range time of the segment ( no need watch the video normally to skip the sponser ) ; so it means that if you seeked the video time to the time in the range of the segment SponserBlock will work perfectly.
