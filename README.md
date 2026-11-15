@@ -6,7 +6,7 @@
 
 Download from [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube.wgt) ( it can be installed besides the official TizenTube because it has different packageID and a different icon ).
 
-This Standalone verion is forked from [2.0.1 Version](https://github.com/reisxd/TizenTube/releases/tag/v2.0.1)
+This Standalone verion is forked from [v2.0.1 Version](https://github.com/reisxd/TizenTube/releases/tag/v2.0.1)
 
 It receives updates from [here](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) ( I own this file and it's up-to-date ) ( I wrote the userScript to be minified js code + made it ES5-compatible to ensure it works on older Chromium versions, such as M56 on Tizen 4.0. ).
 
