@@ -6,9 +6,9 @@
 
 Download from [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube.wgt) ( it can be installed besides the official TizenTube because it has a different package ID and a different icon ).
 
-This Standalone version is forked from [v2.0.1 Version](https://github.com/reisxd/TizenTube/releases/tag/v2.0.1)
+This standalone version is based on TizenTube [v2.0.1](https://github.com/reisxd/TizenTube/releases/tag/v2.0.1)
 
-The fork uses a custom-hosted [UserScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) maintained by me. I also modified the script to use ES5-compatible JavaScript syntax for older Chromium environments, including Tizen 4.0 (M56).
+The app loads my own [UserScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) from this link, which I maintain and keep updated.
 
 I could fix "pause" and "play" buttons on Tizen 4.0 legacy TV with exact same remote in the attached photo ( the last line from the bottom ).
 [See the Samsung TV remote layout](.github/assets/Samsung_TV_Remote.png)
@@ -22,13 +22,13 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/listing_3_videos_in_row_for_playlists.jpg" alt="Listing 3 videos in a row for playlists">
 
-**2- Showing only videos and playlists when visiting a channel ( you still can scroll to bottom and click on "videos" to be able to sort the videos from "most popular" and to to list 3 videos in the row ).**
+**2- When visiting a channel, only videos and playlists are displayed initially. You can still scroll down and select "Videos" to access sorting options such as "Most popular", while keeping the 3-videos-per-row layout.**
 
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/showing_only_videos_and_playlists_when_visiting_a_channel.jpg" alt="Showing only videos and playlists when visiting a channel">
 
 **3- "Fix Subtitle Sync": I added an option below "Turn off screen" option. It fixes subtitle synchronization issues by setting the subtitle container width to 66% of the TV screen.**
 Notes:
-- The adjustment applies to the currently playing video and the immediately following video only. It does not carry over to subsequent videos.
+- This option affects the currently playing video and the next video only.
 - Use this option only when experiencing subtitle synchronization issues, as not all videos have this problem.
  
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/fix_subtitle_sync_for_the_current_video.png" width="800" alt="Fix Subtitle Sync">
@@ -37,7 +37,7 @@ Notes:
 Notes:
 - Seeking with 1 tap doesn't work when the video is paused ( I made it intentionally to be able to navigate between ending cards but you need to pause the video first ).
 - I didn't like to make "ok" button to pause the video because I used to using "pause" and "play" buttons on the remote.
-- You can seek forward or backward by 10 seconds with a single press of the Left/Right buttons on the remote, even while changing video settings such as quality or playback speed.
+- If you're changing video settings, such as quality or playback speed, while the video is playing, you can still use the Left/Right buttons on the remote to seek forward or backward by 10 seconds.
 
 **5- Black Amoled theme.**
 
