@@ -10,7 +10,7 @@ This standalone version is based on TizenTube [v2.0.1](https://github.com/reisxd
 
 The app loads my own [UserScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) from this link, which I maintain and keep updated.
 
-I could fix "pause" and "play" buttons on Tizen 4.0 legacy TV with exact same remote in the attached photo ( the last line from the bottom ).
+I could fix "pause" and "play" buttons on Tizen 4.0 legacy TV with exact same remote in the attached photo ( the last row from the bottom ).
 [See the Samsung TV remote layout](.github/assets/Samsung_TV_Remote.png)
 
 Note: My Samsung TV model is: ua49n5300 49 inch ( this fork only tested on Tizen 4.0 )
