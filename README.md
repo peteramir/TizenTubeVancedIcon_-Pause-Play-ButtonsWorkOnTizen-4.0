@@ -4,11 +4,11 @@
     <img width="600px" src=".github/assets/TizenTube Standalone Banner.png">
 </p>
 
-Download from [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube.wgt) ( it can be installed besides the official TizenTube because it has different packageID and a different icon ).
+Download from [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube.wgt) ( it can be installed besides the official TizenTube because it has a different package ID and a different icon ).
 
-This Standalone verion is forked from [v2.0.1 Version](https://github.com/reisxd/TizenTube/releases/tag/v2.0.1)
+This Standalone version is forked from [v2.0.1 Version](https://github.com/reisxd/TizenTube/releases/tag/v2.0.1)
 
-It receives updates from [here](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) ( I own this file and it's up-to-date ) ( I wrote the userScript to be minified js code + made it ES5-compatible to ensure it works on older Chromium versions, such as M56 on Tizen 4.0. ).
+The fork uses a custom-hosted [UserScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) maintained by me. I also modified the script to use ES5-compatible JavaScript syntax for older Chromium environments, including Tizen 4.0 (M56).
 
 I could fix "pause" and "play" buttons on Tizen 4.0 legacy TV with exact same remote in the attached photo ( the last line from the bottom ).
 [See the Samsung TV remote layout](.github/assets/Samsung_TV_Remote.png)
@@ -26,7 +26,7 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/showing_only_videos_and_playlists_when_visiting_a_channel.jpg" alt="Showing only videos and playlists when visiting a channel">
 
-3- "Fix Subtitle Sync": I added an option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle takes 66% of the screen of the TV.
+3- "Fix Subtitle Sync": I added an option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle container occupies 66% of the screen of the TV.
 Notes:
 - "Fix Subtitle sync" option works on the current playing video and the next playing video only ( it's a known bug for not working only on the selected video ) ( it's one-time-use button, only use it when facing a broken subtitle sync not on all videos because not all videos have the subtitle sync problem ).
 - It's recommended to enable these options ( I enable these personally to fix subtitle sync ):
@@ -47,15 +47,15 @@ Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.g
 
 6- Changed code of "Adblock".
 
-Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
+Credits: [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
-7- Changed code of "SponserBlock" ( modified the initianlizing SponserBlock in the project to fix the memoryleak ). I modified [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js) code to add these 3 features :
+7- Changed code of "SponsorBlock" ( modified the initializing SponserBlock in the project to fix the memoryleak ). I modified [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js) code to add these 3 features :
 
 - segment colors doesn't disappear when seeking the video on progress bar + when "auto-skip" toggle option is enabled for a specific category, when come back to the same segment is asks for confirmation and doesn't auto-skip in the second time for the single segment.
 - SponserBlock works when being in the range time of the segment ( no need watch the video normally to skip the sponser ) ; so it means that if you seeked the video time to the time in the range of the segment SponserBlock will work perfectly.
-- when it skip an "Ending/credits" in the end of the video it auto-plays to the next video instead of re-playing the same video ( works only Vaccumtube , it doesn't work on Tizen 4.0 OS ).
+- when it skip an "Ending/credits" in the end of the video it auto-plays to the next video instead of re-playing the same video ( works only VacuumTube , it doesn't work on Tizen 4.0 OS ).
 
-Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js).
+Credits: [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js).
 
 8- Splitted "Fix UI" option to 6 options ( enable only the first 4 ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
 
@@ -66,7 +66,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 - Remove app-quality class.
 - Keep app-quality class.
 
-9- Being able to choose the client for user-agent spoofing ( mostly a useless feature ):
+9- Being able to choose the client for user-agent spoofing:
 
 - OFF (no spoofing).
 - Tizen 4.0 (Samsung 2018).
@@ -75,7 +75,7 @@ Credits: [VaccumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 - TCL Smart TV Pro (Android 12).
 - Amazon AFTMM (Android 7.1.2)
 
-10- Disable animations ( it's a bad option don't enable it, I added it in case anybody like this option, enabling this option makes thumbnails and video Titles load slower while navigating on the home feed + makes a noticable delay in the subtitle sync, don't enable this option unless you are okay with these 2 downsides ).
+10- Disable animations ( it's a bad option don't enable it, I added it in case anybody like this option, enabling this option makes thumbnails and video Titles load slower while navigating on the home feed + makes a noticeable delay in the subtitle sync, don't enable this option unless you are okay with these 2 downsides ).
 
 11- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.
 
@@ -91,4 +91,4 @@ Send me a message on my Telegram and tell me if it helped you with your own Tize
 
 Forks I appreciate its work: [axotube](https://github.com/TizenDroid/axotube) | [KrX3D](https://github.com/KrX3D/TizenTube)
 
-Credits goes to [Reis](https://github.com/reisxd/TizenTube) the Header of this project for doing the hard parts.
+Credits go to Special thanks to [Reis](https://github.com/reisxd/TizenTube), the original author, for building the core project.
