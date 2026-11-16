@@ -26,7 +26,7 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/showing_only_videos_and_playlists_when_visiting_a_channel.jpg" alt="Showing only videos and playlists when visiting a channel">
 
-3- "Fix Subtitle Sync": I added an option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle container occupies 66% of the screen of the TV.
+3- "Fix Subtitle Sync": I added an option below "Turn off screen" option. It fixes subtitle synchronization issues by setting the subtitle container width to 66% of the TV screen.
 Notes:
 - The adjustment applies to the currently playing video and the immediately following video only. It does not carry over to subsequent videos.
 - Use this option only when experiencing subtitle synchronization issues, as not all videos have this problem.
@@ -47,10 +47,14 @@ Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.g
 
 Credits: [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
-7- Changed code of "SponsorBlock" ( modified the initializing SponserBlock in the project to fix the memoryleak ). I modified [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js) code to add these 3 features :
+7- Modified SponsorBlock initialization to fix a memory leak.
+
+I also adapted code from VacuumTube to introduce these 3 improvements:
 
 - segment colors doesn't disappear when seeking the video on progress bar + when "auto-skip" toggle option is enabled for a specific category, when come back to the same segment is asks for confirmation and doesn't auto-skip in the second time for the single segment.
-- SponserBlock works when being in the range time of the segment ( no need watch the video normally to skip the sponser ) ; so it means that if you seeked the video time to the time in the range of the segment SponserBlock will work perfectly.
+
+- SponsorBlock works when being in the range time of the segment ( no need watch the video normally to skip the sponsor ) ; so it means that if you seeked the video time to the time in the range of the segment SponsorBlock will work perfectly.
+
 - when it skip an "Ending/credits" in the end of the video it auto-plays to the next video instead of re-playing the same video ( works only VacuumTube , it doesn't work on Tizen 4.0 OS ).
 
 Credits: [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js).
@@ -73,7 +77,13 @@ Credits: [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preloa
 - TCL Smart TV Pro (Android 12).
 - Amazon AFTMM (Android 7.1.2)
 
-10- Disable animations ( it's a bad option don't enable it, I added it in case anybody like this option, enabling this option makes thumbnails and video Titles load slower while navigating on the home feed + makes a noticeable delay in the subtitle sync, don't enable this option unless you are okay with these 2 downsides ).
+10- Disable animations.
+
+Note: This option has two known drawbacks:
+- Thumbnails and video titles load more slowly when navigating the home feed.
+- Subtitle synchronization may experience noticeable delays.
+
+Recommended: Keep this option disabled unless you prefer the reduced animations and accept these trade-offs.
 
 11- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.
 
@@ -89,4 +99,4 @@ Send me a message on my Telegram and tell me if it helped you with your own Tize
 
 Forks I appreciate its work: [axotube](https://github.com/TizenDroid/axotube) | [KrX3D](https://github.com/KrX3D/TizenTube)
 
-Credits go to Special thanks to [Reis](https://github.com/reisxd/TizenTube), the original author, for building the core project.
+Special thanks to [Reis](https://github.com/reisxd/TizenTube), the original author of TizenTube, for building the core project.
