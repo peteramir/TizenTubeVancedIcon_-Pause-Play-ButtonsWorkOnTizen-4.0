@@ -28,10 +28,8 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 
 3- "Fix Subtitle Sync": I added an option below "Turn off screen" option. it fixes subtitle sync by making the container of the subtitle container occupies 66% of the screen of the TV.
 Notes:
-- "Fix Subtitle sync" option works on the current playing video and the next playing video only ( it's a known bug for not working only on the selected video ) ( it's one-time-use button, only use it when facing a broken subtitle sync not on all videos because not all videos have the subtitle sync problem ).
-- It's recommended to enable these options ( I enable these personally to fix subtitle sync ):
-    - Enable these options in "Fix UI": Disable limited-memory mode + Full-animation app quality + Enable list animations + Enable long press.
-    - Enable: "No Spoofing" option.
+- The adjustment applies to the currently playing video and the immediately following video only. It does not carry over to subsequent videos.
+- Use this option only when experiencing subtitle synchronization issues, as not all videos have this problem.
  
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/fix_subtitle_sync_for_the_current_video.png" width="800" alt="Fix Subtitle Sync">
 
@@ -39,7 +37,7 @@ Notes:
 Notes:
 - Seeking with 1 tap doesn't work when the video is paused ( I made it intentionally to be able to navigate between ending cards but you need to pause the video first ).
 - I didn't like to make "ok" button to pause the video because I used to using "pause" and "play" buttons on the remote.
-- if you are changing video settings like quality/speed while the video is playing and you tapped on left/right on the remote in seek 10+/10-.
+- You can seek forward or backward by 10 seconds with a single press of the Left/Right buttons on the remote, even while changing video settings such as quality or playback speed.
 
 5- Black Amoled theme.
 
