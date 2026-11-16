@@ -93,7 +93,7 @@ you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pa
 
 ## ⚠️ Disclaimer
 
-**This project is NOT affiliated, associated, authorized, endorsed by, or in any way officially connected with Samsung, Tizen, or YouTube.**
+**This is an independent, community-developed project and is not affiliated with, endorsed by, or officially associated with Samsung, Tizen, or YouTube.**
 
 Send me a message on my Telegram and tell me if it helped you with your own Tizen 4.0: https://t.me/username309x
 
