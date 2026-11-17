@@ -2,6 +2,8 @@
 
 # I demonstrated the steps to install .wgt in details for both Windows 10 pc and Android phones.
 
+Note [Apps2Samsung](https://github.com/Apps2Samsung/Apps2Samsung/releases) asks you to sign the .wgt with your Samsung account ; so you need to have a Samsung account ( create one if you don't have ) and it will redirect to your browser when it needs you to confirm.
+
 *Installing the .wgt file from Windows 10 pc*
 
 1- open "Command Prompt" ( cmd ) on your windows pc + type "ipconfig" and press "enter". Look for: "Ethernet adapter Ethernet:" and you will see: "   IPv4 Address. . . . . . . . . . . : 192.168.1.6". Keep that local ip address in mind ( this is this the ip address of the pc ).
@@ -21,7 +23,7 @@
 ==================================================================
 
 *Installing the .wgt file from an Android phone*
-Apps2Samsung-v3.3.1-android.apk
+
 1- Install [Fing](https://www.rockmods.net/apps/fing-mod-apk) app on your Android phone, you can know the local ip address of both the TV and the phone itself.
 
 2- Open "Wifi Status" on your Samsung TV to check your network information and see the TV's local ip address, it will be something like: "192.168.1.7".
