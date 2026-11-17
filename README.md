@@ -4,7 +4,7 @@
     <img width="600px" src=".github/assets/TizenTube Standalone Banner.png">
 </p>
 
-Download from [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube.wgt) ( it can be installed besides the official TizenTube because it has a different package ID and a different icon ).
+Download from [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/releases/download/fixes/TizenTube.wgt) ( it can be installed besides the official TizenTube because it has a different package ID and a different icon ) | [How to install .wgt file](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/How_to_install_wgt_file_to_Samsung_Smart_Tv.md)
 
 This standalone version is based on TizenTube [v2.0.1](https://github.com/reisxd/TizenTube/releases/tag/v2.0.1)
 
