@@ -28,7 +28,7 @@ Note [Apps2Samsung](https://github.com/Apps2Samsung/Apps2Samsung/releases) asks 
 
 2- Open "Wifi Status" on your Samsung TV to check your network information and see the TV's local ip address, it will be something like: "192.168.1.7".
 
-3- Open Samsung App Store on the TV by clicking "Apps", then tap on these numbers in row: "12345", enable "Developer mode", and insert the local ip address of the pc ( you can naviage beteen the fields with Right/Left remote buttons ), tap on "ok", close "Samsung App Store", hold the power button of the remote for 3-5 seconds untill it shows "Samsung Logo" ( this step is called "cold restart", it just clears /tmp files of the TV ).
+3- Open Samsung App Store on the TV by clicking "Apps", then tap on these numbers in row: "12345", enable "Developer mode", and insert the local ip address of the phone ( you can naviage beteen the fields with Right/Left remote buttons ), tap on "ok", close "Samsung App Store", hold the power button of the remote for 3-5 seconds untill it shows "Samsung Logo" ( this step is called "cold restart", it just clears /tmp files of the TV ).
 
 4- Download [Apps2Samsung](https://github.com/Apps2Samsung/Apps2Samsung/releases) on your Android phone ( choose "Apps2Samsung-v3.3.1-android.apk" ) or any newer version, Open it, it will recognize the TV automatically ( if not, write the local ip address of the TV manually, if not recognized, make a "cold restart" again on the TV and re-open Apps2Samsung again and it will recognize it, if not write the local ip address of the TV manually ), choose: "Install a file..." and choose the downloade .wgt file, wait a 5-12 seconds, it Done installing.
 
