@@ -70,7 +70,7 @@ I also adapted and improved parts of VacuumTube's SponsorBlock implementation to
 
 **Credits:** [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js) (original implementation adapted and improved).
 
-**8- Splitted "Fix UI" option to 6 options** ( enable only the first 4 ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
+**8- Splitted "Fix UI" option to 6 options** ( I recommend enabling only the first 4 options ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
 
 - Disable limited-memory mode.
 - Full-animation app quality.
@@ -79,7 +79,7 @@ I also adapted and improved parts of VacuumTube's SponsorBlock implementation to
 - Remove app-quality class.
 - Keep app-quality class.
 
-**9- Being able to choose the client for user-agent spoofing:**
+**9- Being able to choose the client for user-agent spoofing:** ( haven't been tested this feature yet ).
 
 - OFF (no spoofing).
 - Tizen 4.0 (Samsung 2018).
@@ -101,6 +101,8 @@ Recommended: Keep this option disabled unless you prefer the reduced animations 
 you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/standalone/service/patch.js)
 
 **12- Refresh page 'F5' ( press on it after making changes in toggle options ).**
+
+13- Restoring "Not interested" + "Don't recommend this channel" feature is still being developing...⏳
 
 ## ⚠️ Disclaimer
 
