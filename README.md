@@ -1,3 +1,9 @@
+
+
+
+
+
+
 # ▶️ TizenTube ( with Vanced legacy icon )
 
 <p align="center">
@@ -24,20 +30,25 @@ I added these toggle options to [Reis's userScript.js](https://cdn.jsdelivr.net/
 
 **2- When visiting a channel, only videos and playlists are displayed initially. You can still scroll down and select "Videos" to access sorting options such as "Most popular", while keeping the 3-videos-per-row layout.**
 
-<img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/showing_only_videos_and_playlists_when_visiting_a_channel.jpg" alt="Showing only videos and playlists when visiting a channel">
+<img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/showing_only_videos_and_playlists_when_visiting_a_channel.jpg" alt="Showing only videos and 
+playlists when visiting a channel">
 
-**3- "Fix Subtitle Sync": I added an option below "Turn off screen" option. It fixes subtitle synchronization issues by setting the subtitle container width to 66% of the TV screen.**
+**3- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).**
+Notes:
+- Seeking with 1 tap doesn't work when the video is paused ( I made it intentionally to be able to navigate between ending cards but you need to pause the video first ).
+- I didn't like to make "ok" button to pause the video because I used to using "pause" and "play" buttons on the remote.
+- If you're changing video settings, such as quality or playback speed, while the video is playing, you can still use the Left/Right buttons on the remote to seek forward or backward by 10 seconds.
+
+https://github.com/user-attachments/assets/a3bf2067-8bd1-46e4-ad58-1272920859b3
+
+Note: This Video recorded on pc with [VaccumTube](https://github.com/shy1132/VacuumTube) and just used my [userScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) + used this small python code to show the buttons on the screen when I tap on it [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/tizen40_remote_overlay.py). The same behaviour EXACTLY happends on Tizen 4.0 ( except that on Tizen 4.0 it doesn't need 2 clicks to open the video like the attached video ).
+
+**4- "Fix Subtitle Sync": I added an option below "Turn off screen" option. It fixes subtitle synchronization issues by setting the subtitle container width to 66% of the TV screen.**
 Notes:
 - This option affects the currently playing video and the next video only.
 - Use this option only when experiencing subtitle synchronization issues, as not all videos have this problem.
  
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/fix_subtitle_sync_for_the_current_video.png" width="800" alt="Fix Subtitle Sync">
-
-**4- Seek with 1 tap ( seek 10+/10- without showing the annoying UI with just a single tap ).**
-Notes:
-- Seeking with 1 tap doesn't work when the video is paused ( I made it intentionally to be able to navigate between ending cards but you need to pause the video first ).
-- I didn't like to make "ok" button to pause the video because I used to using "pause" and "play" buttons on the remote.
-- If you're changing video settings, such as quality or playback speed, while the video is playing, you can still use the Left/Right buttons on the remote to seek forward or backward by 10 seconds.
 
 **5- Black Amoled theme.**
 
@@ -97,6 +108,8 @@ you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pa
 
 Send me a message on my Telegram and tell me if it helped you with your own Tizen 4.0: https://t.me/username309x
 
-Forks I appreciate its work: [axotube](https://github.com/TizenDroid/axotube) | [KrX3D](https://github.com/KrX3D/TizenTube)
+Forks I appreciate its work: [axotube](https://github.com/TizenDroid/axotube) | [KrX3D](https://github.com/KrX3D/TizenTube).
+
+A special thank to [VaccumTube](https://github.com/shy1132/VacuumTube) which without it I couldn't develop any of these new features. I depended totally on its DevTools and its console tab to test javascript code before moving it to TV.
 
 Special thanks to [Reis](https://github.com/reisxd/TizenTube), the original author of TizenTube, for building the core project.
