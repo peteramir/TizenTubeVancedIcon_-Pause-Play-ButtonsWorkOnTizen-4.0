@@ -39,6 +39,8 @@ Notes:
 - I didn't like to make "ok" button to pause the video because I used to using "pause" and "play" buttons on the remote.
 - If you're changing video settings, such as quality or playback speed, while the video is playing, you can still use the Left/Right buttons on the remote to seek forward or backward by 10 seconds.
 
+*Play the video with volume ON to listen the audio*
+
 https://github.com/user-attachments/assets/a3bf2067-8bd1-46e4-ad58-1272920859b3
 
 Note: This Video recorded on pc with [VaccumTube](https://github.com/shy1132/VacuumTube) and just used my [userScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) + used this small python code to show the buttons on the screen when I tap on it [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/tizen40_remote_overlay.py). The same behaviour EXACTLY happends on Tizen 4.0 ( except that on Tizen 4.0 it doesn't need 2 clicks to open the video like the attached video ).
