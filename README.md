@@ -1,9 +1,3 @@
-
-
-
-
-
-
 # ▶️ TizenTube ( with Vanced legacy icon )
 
 <p align="center">
@@ -54,7 +48,7 @@ Notes:
 
 **5- Black Amoled theme.**
 
-Credits: [axotube](https://github.com/TizenDroid/axotube) | [here](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [here](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
+Credits: [axotube](https://github.com/TizenDroid/axotube) | [userScript github](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [userScript cdn.jsdelivr](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
 
 **6- Changed code of "Adblock".**
 
@@ -110,7 +104,7 @@ you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pa
 
 **This is an independent, community-developed project and is not affiliated with, endorsed by, or officially associated with Samsung, Tizen, or YouTube.**
 
-Send me a message on my Telegram and tell me if it helped you with your own Tizen 4.0: https://t.me/username309x
+Send me a message on my [Telegram](https://t.me/username309x) and tell me if it helped you with your own Tizen 4.0.
 
 Forks I appreciate its work: [axotube](https://github.com/TizenDroid/axotube) | [KrX3D](https://github.com/KrX3D/TizenTube).
 
