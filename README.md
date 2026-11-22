@@ -46,6 +46,8 @@ Notes:
  
 <img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/fix_subtitle_sync_for_the_current_video.png" width="800" alt="Fix Subtitle Sync">
 
+Note: *Subtitle sync* problem happends because v2.0.1 uses the official youtube app as a wrapper and just injects the user-scripts on it ; any part of the app which needs storage it can't write on the internal storage of the TV, it needs to be specified first in the user-script to be save in javascript localstorage. If you tried using v.2.0.1 without any user-script you won't be able change the language of the interface because it won't be able to write on the internal storage. To solve this problem we need to use youtube.com/tv domain directly instead of depending on the official youtube app as a wrapper but this needs engineering and I can't do this step at the moment.
+
 **5- Black Amoled theme.**
 
 Credits: [axotube](https://github.com/TizenDroid/axotube) | [userScript github](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [userScript cdn.jsdelivr](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
