@@ -41,7 +41,7 @@ Note: This Video recorded on pc with [VaccumTube](https://github.com/shy1132/Vac
 
 **4- change youtube icon to youtube premium or remove youtube icon completely.**
 
-<img src="[https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/listing_3_videos_in_row_for_playlists.jpg](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/yt_premium_icon.jpg)" alt="Youtube Premium icon">
+<img src="https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/yt_premium_icon.jpg" alt="Youtube Premium icon">
 
 **5- Black Amoled theme.**
 
