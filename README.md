@@ -39,14 +39,9 @@ https://github.com/user-attachments/assets/a3bf2067-8bd1-46e4-ad58-1272920859b3
 
 Note: This Video recorded on pc with [VaccumTube](https://github.com/shy1132/VacuumTube) and just used my [userScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) + used this small python code to show the buttons on the screen when I tap on it [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/tizen40_remote_overlay.py). The same behaviour EXACTLY happends on Tizen 4.0 ( except that on Tizen 4.0 it doesn't need 2 clicks to open the video like the attached video ).
 
-**4- "Fix Subtitle Sync": I added an option below "Turn off screen" option. It fixes subtitle synchronization issues by setting the subtitle container width to 66% of the TV screen.**
-Notes:
-- This option affects the currently playing video and the next video only.
-- Use this option only when experiencing subtitle synchronization issues, as not all videos have this problem.
- 
-<img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/fix_subtitle_sync_for_the_current_video.png" width="800" alt="Fix Subtitle Sync">
+**4- change youtube icon to youtube premium or remove youtube icon completely.**
 
-Note: *Subtitle sync* problem happends because v2.0.1 uses the official youtube app as a wrapper and just injects the user-scripts on it ; any part of the app which needs storage it can't write on the internal storage of the TV, it needs to be specified first in the user-script to be save in javascript localstorage. If you tried using v.2.0.1 without any user-script you won't be able change the language of the interface because it won't be able to write on the internal storage. To solve this problem we need to use youtube.com/tv domain directly instead of depending on the official youtube app as a wrapper but this needs engineering and I can't do this step at the moment.
+<img src="[https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/listing_3_videos_in_row_for_playlists.jpg](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/yt_premium_icon.jpg)" alt="Youtube Premium icon">
 
 **5- Black Amoled theme.**
 
@@ -104,7 +99,14 @@ you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pa
 
 14- change background color of "Home","Library" icons + remove its background-color.
 
-15- change youtube icon to youtube premium or remove youtube icon completely.
+**14- "Fix Subtitle Sync": I added an option below "Turn off screen" option. It fixes subtitle synchronization issues by setting the subtitle container width to 66% of the TV screen.**
+Notes:
+- This option affects the currently playing video and the next video only.
+- Use this option only when experiencing subtitle synchronization issues, as not all videos have this problem.
+ 
+<img src="https://raw.githubusercontent.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/main/.github/assets/fix_subtitle_sync_for_the_current_video.png" width="800" alt="Fix Subtitle Sync">
+
+Note: *Subtitle sync* problem happends because v2.0.1 uses the official youtube app as a wrapper and just injects the user-scripts on it ; any part of the app which needs storage it can't write on the internal storage of the TV, it needs to be specified first in the user-script to be save in javascript localstorage. If you tried using v.2.0.1 without any user-script you won't be able change the language of the interface because it won't be able to write on the internal storage. To solve this problem we need to use youtube.com/tv domain directly instead of depending on the official youtube app as a wrapper but this needs engineering and I can't do this step at the moment.
 
 16- change border color of focused video on home feed.
 
