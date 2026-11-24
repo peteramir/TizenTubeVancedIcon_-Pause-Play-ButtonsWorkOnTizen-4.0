@@ -57,9 +57,9 @@ Notes:
 
 Note: *Subtitle sync* problem happends because v2.0.1 uses the official youtube app as a wrapper and just injects the user-scripts on it ; any part of the app which needs storage it can't write on the internal storage of the TV, it needs to be specified first in the user-script to be save in javascript localstorage. If you tried using v.2.0.1 without any user-script you won't be able change the language of the interface because it won't be able to write on the internal storage. To solve this problem we need to use youtube.com/tv domain directly instead of depending on the official youtube app as a wrapper but this needs engineering and I can't do this step at the moment.
 
-**7- Changed code of "Adblock".**
+7- change border color of focused video on home feed ( to be lighter to your eyes instead of using the solid white color ).
 
-Credits: [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
+<img src="https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/focused_video_border_color.png" alt="Youtube Premium icon">
 
 **8- Modified SponsorBlock initialization to fix a memory leak.**
 
@@ -111,7 +111,9 @@ you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pa
 
 Credits: [axotube](https://github.com/TizenDroid/axotube) | [userScript github](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [userScript cdn.jsdelivr](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
 
-16- change border color of focused video on home feed.
+**16- Changed code of "Adblock".**
+
+Credits: [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
 17- Black Amoled theme sidebar.
 
