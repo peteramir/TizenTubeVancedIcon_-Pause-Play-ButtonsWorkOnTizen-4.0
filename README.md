@@ -102,6 +102,16 @@ you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pa
 
 13- Restoring "Not interested" + "Don't recommend this channel" feature is still being developing...⏳
 
+14- change background color of "Home","Library" icons + remove its background-color.
+
+15- change youtube icon to youtube premium or remove youtube icon completely.
+
+16- change border color of focused video on home feed.
+
+17- Black Amoled theme sidebar.
+
+18- Remove the grey line which is on top of the thumbnail of playlist,mix videos.
+
 ## ⚠️ Disclaimer
 
 **This is an independent, community-developed project and is not affiliated with, endorsed by, or officially associated with Samsung, Tizen, or YouTube.**
