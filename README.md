@@ -57,21 +57,13 @@ Notes:
 
 Note: *Subtitle sync* problem happends because v2.0.1 uses the official youtube app as a wrapper and just injects the user-scripts on it ; any part of the app which needs storage it can't write on the internal storage of the TV, it needs to be specified first in the user-script to be save in javascript localstorage. If you tried using v.2.0.1 without any user-script you won't be able change the language of the interface because it won't be able to write on the internal storage. To solve this problem we need to use youtube.com/tv domain directly instead of depending on the official youtube app as a wrapper but this needs engineering and I can't do this step at the moment.
 
-7- change border color of focused video on home feed ( to be lighter to your eyes instead of using the solid white color ).
+**7- change border color of focused video ( to be lighter to your eyes instead of using the solid white color ).**
 
-<img src="https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/focused_video_border_color.png" alt="Youtube Premium icon">
+<img src="https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/focused_video_border_color.png" alt="Change border color of focused video">
 
-**8- Modified SponsorBlock initialization to fix a memory leak.**
+**8- Remove the grey line which is on top of the thumbnail of playlist,mix videos.**
 
-I also adapted and improved parts of VacuumTube's SponsorBlock implementation to introduce the following three enhancements:
-
-- **Persistent segment colors when seeking:** SponsorBlock segment colors remain visible on the progress bar while seeking. Additionally, when auto-skip is enabled for a specific category, the same segment is automatically skipped again if the user seeks back into it, without requiring confirmation.
-
-- **Skip segments immediately upon seeking into them:** SponsorBlock detects when the playback position enters a segment's time range and skips it immediately, without requiring the user to play through the video normally to reach that segment.
-
-- **Improved end-screen handling:** When SponsorBlock skips an "Ending/Credits" segment at the end of a video, playback automatically advances to the next video instead of replaying the current one. (This behavior is supported by VacuumTube but does not work on Tizen 4.0.)
-
-**Credits:** [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js) (original implementation adapted and improved).
+<img src="https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/remove_the_line_above_playlists_and_mix_videos.png" width="800" alt="Fix Subtitle Sync">
 
 **9- Splitted "Fix UI" option to 6 options** ( I recommend enabling only the first 4 options ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
 
@@ -105,7 +97,7 @@ you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pa
 
 **13- Refresh page 'F5' ( press on it after making changes in toggle options ).**
 
-14- Restoring "Not interested" + "Don't recommend this channel" feature is still being developing...⏳
+**14- Restoring "Not interested" + "Don't recommend this channel" feature is still being developing...⏳**
 
 **15- Black Amoled theme.**
 
@@ -115,9 +107,19 @@ Credits: [axotube](https://github.com/TizenDroid/axotube) | [userScript github](
 
 Credits: [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
-17- Black Amoled theme sidebar.
+**17- Black Amoled theme sidebar.**
 
-18- Remove the grey line which is on top of the thumbnail of playlist,mix videos.
+**18- Modified SponsorBlock initialization to fix a memory leak.**
+
+I also adapted and improved parts of VacuumTube's SponsorBlock implementation to introduce the following three enhancements:
+
+- **Persistent segment colors when seeking:** SponsorBlock segment colors remain visible on the progress bar while seeking. Additionally, when auto-skip is enabled for a specific category, the same segment is automatically skipped again if the user seeks back into it, without requiring confirmation.
+
+- **Skip segments immediately upon seeking into them:** SponsorBlock detects when the playback position enters a segment's time range and skips it immediately, without requiring the user to play through the video normally to reach that segment.
+
+- **Improved end-screen handling:** When SponsorBlock skips an "Ending/Credits" segment at the end of a video, playback automatically advances to the next video instead of replaying the current one. (This behavior is supported by VacuumTube but does not work on Tizen 4.0.)
+
+**Credits:** [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/sponsorblock.js) (original implementation adapted and improved).
 
 ## ⚠️ Disclaimer
 
