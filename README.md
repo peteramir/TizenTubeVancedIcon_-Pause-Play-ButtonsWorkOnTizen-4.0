@@ -37,7 +37,7 @@ Notes:
 
 https://github.com/user-attachments/assets/a3bf2067-8bd1-46e4-ad58-1272920859b3
 
-Note: This Video recorded on pc with [VaccumTube](https://github.com/shy1132/VacuumTube) and just used my [userScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) + used this small python code to show the buttons on the screen when I tap on it [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/tizen40_remote_overlay.py). The same behaviour EXACTLY happends on Tizen 4.0 ( except that on Tizen 4.0 it doesn't need 2 clicks to open the video like the attached video ).
+Note: This Video recorded on pc with [VaccumTube](https://github.com/shy1132/VacuumTube) and just used my [userScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) + used this small python code to show the buttons on the screen when I tap on it [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/tizen40_remote_overlay.py). The same behaviour EXACTLY happends on Tizen 4.0 ( except that on Tizen 4.0 it doesn't need 2 clicks to open the video like the attached video ) | I used an open source screen recorder [ShareX](https://github.com/ShareX/ShareX) to record the video.
 
 **4- change youtube icon to youtube premium or remove youtube icon completely.**
 
@@ -52,7 +52,7 @@ playlists when visiting a channel">
 
 https://github.com/user-attachments/assets/9aaaf58a-480e-43d5-9cb0-d2226c5c4b61
 
-Note: This Video recorded on pc with [VaccumTube](https://github.com/shy1132/VacuumTube) and just used my [userScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) + used this small python code to show the buttons on the screen when I tap on it [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/tizen40_remote_overlay.py). The same behaviour EXACTLY happends on Tizen 4.0.
+Note: This Video recorded on pc with [VaccumTube](https://github.com/shy1132/VacuumTube) and just used my [userScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) + used this small python code to show the buttons on the screen when I tap on it [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/tizen40_remote_overlay.py). The same behaviour EXACTLY happends on Tizen 4.0 | I used [ffmpeg command](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/ffmpeg_compression_command.txt) to compress the video to upload it + used an open source screen recorder [ShareX](https://github.com/ShareX/ShareX) to record the video.
 
 **7- "Fix Subtitle Sync": I added an option below "Turn off screen" option. It fixes subtitle synchronization issues by setting the subtitle container width to 66% of the TV screen.**
 Notes:
