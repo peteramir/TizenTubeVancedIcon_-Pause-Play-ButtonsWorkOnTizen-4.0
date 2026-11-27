@@ -50,7 +50,7 @@ playlists when visiting a channel">
 
 **6- Added refresh feed button**
 
-https://github.com/user-attachments/assets/9aaaf58a-480e-43d5-9cb0-d2226c5c4b61
+https://github.com/user-attachments/assets/573f9996-6547-4b88-9b5f-b60e29e2a1a0
 
 Note: This Video recorded on pc with [VaccumTube](https://github.com/shy1132/VacuumTube) and just used my [userScript](https://cdn.jsdelivr.net/npm/@shadowtube/tizentube-noanimations/dist/userScript.js) + used this small python code to show the buttons on the screen when I tap on it [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/tizen40_remote_overlay.py). The same behaviour EXACTLY happends on Tizen 4.0 | I used [ffmpeg command](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/ffmpeg_compression_command.txt) to compress the video to upload it + used an open source screen recorder [ShareX](https://github.com/ShareX/ShareX) to record the video.
 
@@ -89,33 +89,25 @@ Note: *Subtitle sync* problem happends because v2.0.1 uses the official youtube 
 - TCL Smart TV Pro (Android 12).
 - Amazon AFTMM (Android 7.1.2)
 
-**12- Disable animations.**
-
-Note: This option has two known drawbacks:
-- Thumbnails and video titles load more slowly when navigating the home feed.
-- Subtitle synchronization may experience noticeable delays.
-
-Recommended: Keep this option disabled unless you prefer the reduced animations and accept these trade-offs.
-
-**13- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.**
+**12- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.**
 
 you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/standalone/service/patch.js)
 
-**14- Refresh page 'F5' ( press on it after making changes in toggle options ).**
+**13- Refresh page 'F5' ( press on it after making changes in toggle options ).**
 
-**15- Restoring "Not interested" + "Don't recommend this channel" feature is still being developing...⏳**
+**14- Restoring "Not interested" + "Don't recommend this channel" feature is still being developing...⏳**
 
-**16- Black Amoled theme.**
+**15- Black Amoled theme.**
 
 Credits: [axotube](https://github.com/TizenDroid/axotube) | [userScript github](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [userScript cdn.jsdelivr](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
 
-**17- Changed code of "Adblock".**
+**16- Changed code of "Adblock".**
 
 Credits: [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
-**18- Black Amoled theme sidebar.**
+**17- Black Amoled theme sidebar.**
 
-**19- Modified SponsorBlock initialization to fix a memory leak.**
+**18- Modified SponsorBlock initialization to fix a memory leak.**
 
 I also adapted and improved parts of VacuumTube's SponsorBlock implementation to introduce the following three enhancements:
 
