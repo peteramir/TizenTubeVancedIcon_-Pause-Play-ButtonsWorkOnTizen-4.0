@@ -48,7 +48,11 @@ Note: This Video recorded on pc with [VaccumTube](https://github.com/shy1132/Vac
 <img src="https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/sidebar_options_backgroundcolor.png" alt="Showing only videos and 
 playlists when visiting a channel">
 
-**6- "Fix Subtitle Sync": I added an option below "Turn off screen" option. It fixes subtitle synchronization issues by setting the subtitle container width to 66% of the TV screen.**
+**6- Added refresh feed button**
+
+https://github.com/user-attachments/assets/9aaaf58a-480e-43d5-9cb0-d2226c5c4b61
+
+**7- "Fix Subtitle Sync": I added an option below "Turn off screen" option. It fixes subtitle synchronization issues by setting the subtitle container width to 66% of the TV screen.**
 Notes:
 - This option affects the currently playing video and the next video only.
 - Use this option only when experiencing subtitle synchronization issues, as not all videos have this problem.
@@ -57,15 +61,15 @@ Notes:
 
 Note: *Subtitle sync* problem happends because v2.0.1 uses the official youtube app as a wrapper and just injects the user-scripts on it ; any part of the app which needs storage it can't write on the internal storage of the TV, it needs to be specified first in the user-script to be save in javascript localstorage. If you tried using v.2.0.1 without any user-script you won't be able change the language of the interface because it won't be able to write on the internal storage. To solve this problem we need to use youtube.com/tv domain directly instead of depending on the official youtube app as a wrapper but this needs engineering and I can't do this step at the moment.
 
-**7- change border color of focused video ( to be lighter to your eyes instead of using the solid white color ).**
+**8- change border color of focused video ( to be lighter to your eyes instead of using the solid white color ).**
 
 <img src="https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/focused_video_border_color.png" alt="Change border color of focused video">
 
-**8- Remove the grey line which is on top of the thumbnail of playlist,mix videos.**
+**9- Remove the grey line which is on top of the thumbnail of playlist,mix videos.**
 
 <img src="https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/.github/assets/remove_the_line_above_playlists_and_mix_videos.png" width="800" alt="Fix Subtitle Sync">
 
-**9- Splitted "Fix UI" option to 6 options** ( I recommend enabling only the first 4 options ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
+**10- Splitted "Fix UI" option to 6 options** ( I recommend enabling only the first 4 options ) ( enabling "Fix UI" toggle option in [Reis's userScript](https://cdn.jsdelivr.net/npm/@foxreis/tizentube/dist/userScript.js) checks the first 5 options together ):
 
 - Disable limited-memory mode.
 - Full-animation app quality.
@@ -74,7 +78,7 @@ Note: *Subtitle sync* problem happends because v2.0.1 uses the official youtube 
 - Remove app-quality class.
 - Keep app-quality class.
 
-**10- Being able to choose the client for user-agent spoofing:** ( haven't been tested this feature yet ).
+**11- Being able to choose the client for user-agent spoofing:** ( haven't been tested this feature yet ).
 
 - OFF (no spoofing).
 - Tizen 4.0 (Samsung 2018).
@@ -83,7 +87,7 @@ Note: *Subtitle sync* problem happends because v2.0.1 uses the official youtube 
 - TCL Smart TV Pro (Android 12).
 - Amazon AFTMM (Android 7.1.2)
 
-**11- Disable animations.**
+**12- Disable animations.**
 
 Note: This option has two known drawbacks:
 - Thumbnails and video titles load more slowly when navigating the home feed.
@@ -91,25 +95,25 @@ Note: This option has two known drawbacks:
 
 Recommended: Keep this option disabled unless you prefer the reduced animations and accept these trade-offs.
 
-**12- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.**
+**13- "pause" + "play" buttons works on Tizen 4.0 legacy Remote.**
 
 you can see its code [here](https://github.com/peteramir/TizenTubeVancedIcon_-Pause-Play-ButtonsWorkOnTizen-4.0/blob/main/standalone/service/patch.js)
 
-**13- Refresh page 'F5' ( press on it after making changes in toggle options ).**
+**14- Refresh page 'F5' ( press on it after making changes in toggle options ).**
 
-**14- Restoring "Not interested" + "Don't recommend this channel" feature is still being developing...⏳**
+**15- Restoring "Not interested" + "Don't recommend this channel" feature is still being developing...⏳**
 
-**15- Black Amoled theme.**
+**16- Black Amoled theme.**
 
 Credits: [axotube](https://github.com/TizenDroid/axotube) | [userScript github](https://raw.githubusercontent.com/TizenDroid/axotube/refs/heads/main/dist/userScript.js) | [userScript cdn.jsdelivr](https://cdn.jsdelivr.net/gh/TizenDroid/axotube/dist/userScript.js).
 
-**16- Changed code of "Adblock".**
+**17- Changed code of "Adblock".**
 
 Credits: [VacuumTube](https://github.com/shy1132/VacuumTube/blob/main/src/preload/modules/adblock.js).
 
-**17- Black Amoled theme sidebar.**
+**18- Black Amoled theme sidebar.**
 
-**18- Modified SponsorBlock initialization to fix a memory leak.**
+**19- Modified SponsorBlock initialization to fix a memory leak.**
 
 I also adapted and improved parts of VacuumTube's SponsorBlock implementation to introduce the following three enhancements:
 
